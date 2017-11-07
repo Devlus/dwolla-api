@@ -1,0 +1,19 @@
+<h2>Auth</h2>
+<%= if @auth do %>
+    <pre id="auth">
+    
+    </pre>
+<% end %>
+<h2>Account Details</h2>
+<%= if @details do %>
+<pre id="details">
+
+</pre>
+<% end %>
+
+<script>
+    window.authInfo = <%= raw @auth %>
+    window.details = <%= raw @details %>
+    $("#auth").text(JSON.stringify(window.authInfo, null, 2))
+    $("#details").text(JSON.stringify(window.details, null, 2))
+</script>
